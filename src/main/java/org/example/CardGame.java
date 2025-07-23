@@ -3,16 +3,22 @@ package org.example;
 import java.util.ArrayList;
 
 public class CardGame {
-    private ArrayList<Card> cardDeck;
-    private String name;
+    private ArrayList<Card> cardDeck; // Holds all the card within
+    private String name; // Storing game name
 
-
+// Constructor - sets the name of the game
+// Creating a new empty array list to hold the cards within
+// Calls the deck create method below
     public CardGame (String name){
         this.name = name;
         this.cardDeck = new ArrayList<>();
         deckCreate();
 
     }
+// Here we are building the card deck using a nested loop within deck create
+// Assign suits with each suit that I need - think I can just use the image instead of Unicode - I will get confused if not
+// Add each symbol on the card and store them in a symbols array
+// Add all the values we need as well to the values array
 
     public void deckCreate(){
         String [] suits = {"♥", "♦", "♣", "♠"};// Unicode String[] suits = {"\u2665", "\u2666", "\u2663", "\u2660"}
@@ -20,6 +26,9 @@ public class CardGame {
         int[] value = {2,3,4,5,6,7,8,9,10,11,12,13,14};
 
 // Building the deck using a nested for loop - creating each card for each suit
+// For each loop =  every string item called suit in the suits array we must iterate and build a new card - runs 4 times
+// Each symbol & value is then added to the suit
+
         for(String suit: suits){
             for(int i = 0; i< symbols.length; i++){
                 cardDeck.add(new Card(suit,symbols[i], value[i]));
@@ -27,16 +36,19 @@ public class CardGame {
         }
     }
 
+// Allows main to access the deck
     public ArrayList<Card> getDeck(){
         return cardDeck;
     }
 
-
+// Allows the card to be printed
     public void printDeck(){
         for(Card card:cardDeck){
             System.out.println(card);
         }
         }
+
+// Allows the main to get the "Snap Name"
     public String getName(){
         return name;
 
