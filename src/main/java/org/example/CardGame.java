@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class CardGame {
     private ArrayList<Card> cardDeck; // Holds all the card within
@@ -55,17 +56,28 @@ public class CardGame {
     }
 
  // Stage 2 - deal card method
-
+// Fairly self-explanatory, getting the first card of the deck and then removing
+// it from the deck so it can no longer be used in the game. Subsequently returning the first card drawn
+// from the deck
  public Card dealCard(){
    Card firstCard = cardDeck.getFirst();
         cardDeck.removeFirst();
         return firstCard;
  };
 
-    ArrayList<Card>sortDeckIntoSuits(){
-        ArrayList<Card> deckSorted = new ArrayList<>(cardDeck);
-        deckSorted.sort();
+
+ // Using a comparator to sort the deck - how do we sort the two objects
+ // Then sort by value of the card
+
+    public void sortDeckIntoSuits(){
+        cardDeck.sort(Comparator.comparing(Card::getSuit).thenComparing(Card::getValue));
     }
 
+    // Sort deck in number order - similar to the above method
+    public void sortDeckByValue(){
+        cardDeck.sort((Comparator.comparing(Card::getValue)));
+    }
+
+    
 
 }
