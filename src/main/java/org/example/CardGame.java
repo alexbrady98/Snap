@@ -21,7 +21,7 @@ public class CardGame {
 // Add all the values we need as well to the values array
 
     public void deckCreate(){
-        String [] suits = {"♥", "♦", "♣", "♠"};// Unicode String[] suits = {"\u2665", "\u2666", "\u2663", "\u2660"}
+        Suits [] suits = Suits.values();// Unicode String[] suits = {"\u2665", "\u2666", "\u2663", "\u2660"}
         String [] symbols = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
         int[] value = {2,3,4,5,6,7,8,9,10,11,12,13,14};
 
@@ -29,7 +29,7 @@ public class CardGame {
 // For each loop =  every string item called suit in the suits array we must iterate and build a new card - runs 4 times
 // Each symbol & value is then added to the suit
 
-        for(String suit: suits){
+        for(Suits suit: suits){
             for(int i = 0; i< symbols.length; i++){
                 cardDeck.add(new Card(suit,symbols[i], value[i]));
             }
@@ -53,4 +53,19 @@ public class CardGame {
         return name;
 
     }
+
+ // Stage 2 - deal card method
+
+ public Card dealCard(){
+   Card firstCard = cardDeck.getFirst();
+        cardDeck.removeFirst();
+        return firstCard;
+ };
+
+    ArrayList<Card>sortDeckIntoSuits(){
+        ArrayList<Card> deckSorted = new ArrayList<>(cardDeck);
+        deckSorted.sort();
+    }
+
+
 }

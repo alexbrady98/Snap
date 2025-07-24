@@ -20,7 +20,7 @@ private final int value;
         return value;
     }
 
-    public String getSuit() {
+    public Suits getSuit() {
         return suit;
     }
 
