@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class CardGame {
@@ -60,8 +61,8 @@ public class CardGame {
 // it from the deck so it can no longer be used in the game. Subsequently returning the first card drawn
 // from the deck
  public Card dealCard(){
-   Card firstCard = cardDeck.getFirst();
-        cardDeck.removeFirst();
+   Card firstCard = cardDeck.get(0);
+        cardDeck.remove(0);
         return firstCard;
  };
 
@@ -78,6 +79,10 @@ public class CardGame {
         cardDeck.sort((Comparator.comparing(Card::getValue)));
     }
 
-    
+    // Shuffle Deck Method
+    // Collections.shuffle randomly reorders the deck
 
+    public void shuffleDeck(){
+        Collections.shuffle(cardDeck);
+    }
 }

@@ -8,7 +8,7 @@ public enum Suits {
 
     private final String symbol;
 
-    Suit(String symbol){
+    Suits(String symbol){
         this.symbol = symbol;
     }
 
