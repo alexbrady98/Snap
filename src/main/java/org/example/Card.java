@@ -26,9 +26,6 @@ private final int value;
 
     @Override
     public String toString() {
-        return "Card(" +
-                "Suit=" + suit +
-                "Symbol =" + symbol +
-                "Value =" + value + ")";
+        return String.format("%s of %s", symbol, suit);
     }
 }
