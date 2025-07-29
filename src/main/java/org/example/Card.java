@@ -2,8 +2,8 @@ package org.example;
 
 public class Card {
     private final Suits suit;
-private final String symbol;
-private final int value;
+    private final String symbol;
+    private final int value;
 
 
     public Card(Suits suit, String symbol, int value) {

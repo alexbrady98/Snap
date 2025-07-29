@@ -8,16 +8,18 @@ public enum Suits {
 
     private final String symbol;
 
-    Suits(String symbol){
+    Suits(String symbol) {
         this.symbol = symbol;
     }
 
-    public String getSymbol(){
-      return symbol;
-    };
+    public String getSymbol() {
+        return symbol;
+    }
+
+    ;
 
     @Override
-    public String toString(){
+    public String toString() {
         return symbol;
     }
 

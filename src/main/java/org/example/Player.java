@@ -37,5 +37,10 @@ public class Player {
             System.out.println(card);
         }
     }
+
+    public void clearHand() {
+        hand.clear();
+    }
+
 }
 
