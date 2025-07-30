@@ -2,30 +2,27 @@ package org.example;
 
 public class Card {
     private final Suits suit;
-    private final String symbol;
-    private final int value;
+    private final Ranks rank;
 
 
-    public Card(Suits suit, String symbol, int value) {
+    public Card(Suits suit, Ranks rank) {
         this.suit = suit;
-        this.symbol = symbol;
-        this.value = value;
+        this.rank = rank;
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public int getValue() {
-        return value;
+    public Ranks getRank(){
+        return rank;
     }
 
     public Suits getSuit() {
         return suit;
     }
+    public int getValue(){
+        return rank.getValue();
+    }
 
     @Override
     public String toString() {
-        return String.format("%s of %s", symbol, suit);
+        return String.format("%s of %s", rank, suit);
     }
 }

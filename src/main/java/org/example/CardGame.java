@@ -23,17 +23,15 @@ public class CardGame {
 // Add all the values we need as well to the values array
 
     public void deckCreate() {
-        Suits[] suits = Suits.values();// Unicode String[] suits = {"\u2665", "\u2666", "\u2663", "\u2660"}
-        String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
-        int[] value = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+
 
 // Building the deck using a nested for loop - creating each card for each suit
 // For each loop =  every string item called suit in the suits array we must iterate and build a new card - runs 4 times
 // Each symbol & value is then added to the suit
-
-        for (Suits suit : suits) {
-            for (int i = 0; i < symbols.length; i++) {
-                cardDeck.add(new Card(suit, symbols[i], value[i]));
+cardDeck.clear();
+        for (Suits suit : Suits.values()) {
+            for (Ranks rank : Ranks.values()) {
+                cardDeck.add(new Card(suit, rank));
             }
         }
     }

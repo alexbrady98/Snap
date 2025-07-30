@@ -60,8 +60,8 @@ public class Snap extends CardGame {
                 System.out.printf("%s draws %s%n", currentPlayer.getName(), currentCard);
 
                 // Checking for snap
-                if (previousCard != null && previousCard.getSymbol().equals(currentCard.getSymbol())) {
-                    System.out.println("SNAP! Cards Matched" + currentCard.getSymbol());
+                if (previousCard != null && previousCard.getRank().equals(currentCard.getRank())) {
+                    System.out.println("SNAP! Cards Matched" + currentCard.getRank());
                     System.out.printf("%s, type 'snap' to win! You have two seconds...%n", currentPlayer.getName());
 
                 // Using system to access whats actually happening in the system
